@@ -1,0 +1,15 @@
+{
+  "_source": "template neutre par défaut — remplacer via extract_template.py",
+  "name": "",
+  "colors": {
+    "cover_bg": "#1F2937", "cover_mark": "#4B5563", "cover_eyebrow": "#9CA3AF", "cover_subtitle": "#D1D5DB",
+    "cover_pill_bg": "#FFFFFF", "cover_pill_text": "#1F2937", "page_bg": "#FFFFFF", "surface": "#F9FAFB",
+    "surface_blue": "#F3F4F6", "border": "#E5E7EB", "primary": "#2563EB", "ink": "#111827", "body": "#4B5563", "muted": "#6B7280"
+  },
+  "fonts": {
+    "title": "/System/Library/Fonts/Supplemental/Arial Bold.ttf", "title_regular": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "body": "/System/Library/Fonts/Supplemental/Arial.ttf", "body_bold": "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+  },
+  "assets": {},
+  "labels": {"footer_left": "", "footer_right": ""}
+}

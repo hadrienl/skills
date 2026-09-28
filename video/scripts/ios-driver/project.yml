@@ -1,0 +1,27 @@
+name: Driver
+options:
+  bundleIdPrefix: dev.driver
+targets:
+  Host:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources: [Host]
+    info:
+      path: Host/Info.plist
+      properties:
+        UILaunchScreen: {}
+    settings:
+      GENERATE_INFOPLIST_FILE: YES
+      CODE_SIGNING_ALLOWED: NO
+  DriverUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources: [DriverUITests]
+    dependencies:
+      - target: Host
+    settings:
+      GENERATE_INFOPLIST_FILE: YES
+      TEST_TARGET_NAME: Host
+      CODE_SIGNING_ALLOWED: NO

@@ -1,0 +1,14 @@
+#!/bin/zsh
+# Client du pilote XCUITest. Env : PV_IO_DIR (dossier cmd/resp), PV_UDID (simulateur).
+# ios tap X Y | long X Y S | swipe x1 y1 x2 y2 | slowswipe … | label TXT | type TXT | sb TXT | tree | activate | quit | shot NOM
+IO=${PV_IO_DIR:?PV_IO_DIR manquant}
+if [[ $1 == shot ]]; then xcrun simctl io ${PV_UDID:?PV_UDID manquant} screenshot $IO/../$2.png >/dev/null 2>&1; sips -Z 1000 $IO/../$2.png >/dev/null; echo ${IO:h}/$2.png; exit; fi
+id=$(date +%s%N)
+body=${(pj:\t:)@}
+print -rn -- "$id
+$body" > $IO/cmd.tmp && mv $IO/cmd.tmp $IO/cmd.txt
+for i in {1..1200}; do
+  if [[ -f $IO/resp.txt ]] && [[ $(head -1 $IO/resp.txt) == $id ]]; then tail -n +2 $IO/resp.txt; exit; fi
+  sleep 0.1
+done
+echo timeout
