@@ -12,7 +12,7 @@ Sources reconnues (combinables : la première qui fournit un élément gagne) :
   .css .scss             variables --x: #hex et font-family
   .json                  tokens {colors:{…}, fonts:{…}} ou theme.json déjà au bon format
   .ttf .otf              police (1re = titres, 2e = texte)
-Écrit DOSSIER/theme.json (schéma de template/theme.json), les fichiers utiles et preview.png.
+Écrit DOSSIER/theme.json (même schéma que prisme-video/template), les fichiers utiles et preview.png.
 """
 import argparse, colorsys, glob, json, os, re, shutil, subprocess, sys, tempfile, zipfile
 from collections import Counter

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video tutorial</title>
+<link rel="stylesheet" href="player.css">
+<style>
+  /* page autonome : fond sombre, lecteur centré ; en iframe (classe pv-embed), plein cadre */
+  html, body { margin: 0; }
+  body { background: #0E1116; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; box-sizing: border-box; }
+  body .pv-host { width: min(1280px, 100%); }
+  body.pv-embed { padding: 0; display: block; }
+  body.pv-embed .pv-host { width: 100vw; height: 100vh; aspect-ratio: auto; }
+  body.pv-embed .pv.video-js { border-radius: 0; }
+</style>
+</head>
+<body data-pv-standalone>
+  <!-- player.js construit le lecteur à partir de manifest.json (ou ?manifest=…) et charge Video.js à la demande.
+       ?lang=fr impose la langue ; sinon : choix mémorisé, langue du navigateur, puis default_lang. -->
+  <div class="pv-host" data-standalone></div>
+  <script src="player.js"></script>
+</body>
+</html>

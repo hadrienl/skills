@@ -1,0 +1,121 @@
+{
+ "langs": [
+  "en",
+  "fr"
+ ],
+ "default_lang": "en",
+ "labels": {
+  "en": "English",
+  "fr": "Français"
+ },
+ "ui": {
+  "en": {
+   "footer": "Prisme.ai · Smoke test"
+  },
+  "fr": {
+   "footer": "Prisme.ai · Test de fumée"
+  }
+ },
+ "cover": {
+  "eyebrow": {
+   "en": "Prisme.ai · Test",
+   "fr": "Prisme.ai · Test"
+  },
+  "title": {
+   "en": "Smoke test",
+   "fr": "Test de fumée"
+  },
+  "sub": {
+   "en": "Checking the whole pipeline.",
+   "fr": "Vérification de toute la chaîne."
+  },
+  "pill": {
+   "en": "Sandbox",
+   "fr": "Sandbox"
+  },
+  "voice": {
+   "en": "A short test of the whole video pipeline, from recording to the player.",
+   "fr": "Un court test de toute la chaîne vidéo, du tournage jusqu'au lecteur."
+  }
+ },
+ "steps": [
+  {
+   "section": {
+    "en": "Agent Creator",
+    "fr": "Agent Creator"
+   },
+   "title": {
+    "en": "Open the wizard",
+    "fr": "Ouvrir l'assistant"
+   },
+   "sub": {
+    "en": "The creation wizard.",
+    "fr": "L'assistant de création."
+   },
+   "url": "sandbox.prisme.ai/apps/agent-factory",
+   "web": "clips/web_1.mp4",
+   "trim": [
+    1.7,
+    13.35
+   ],
+   "cuts": "auto",
+   "comments": [
+    {
+     "t": 1.72,
+     "text": {
+      "en": "In Agent Creator, I click the button to create a new agent.",
+      "fr": "Dans Agent Creator, je clique sur le bouton pour créer un nouvel agent."
+     },
+     "voice": {
+      "fr": "Dans Agent Creator, je clique sur le bouton pour créer un nouvel agent."
+     }
+    },
+    {
+     "t": 7.45,
+     "text": {
+      "en": "The wizard opens with the list of agent types.",
+      "fr": "L'assistant s'ouvre sur la liste des types d'agents."
+     }
+    }
+   ]
+  },
+  {
+   "section": {
+    "en": "Search",
+    "fr": "Recherche"
+   },
+   "title": {
+    "en": "Find an agent",
+    "fr": "Retrouver un agent"
+   },
+   "sub": {
+    "en": "Filter the list.",
+    "fr": "Filtrer la liste."
+   },
+   "url": "sandbox.prisme.ai/apps/agent-factory",
+   "web": "clips/web_1.mp4",
+   "trim": [
+    13.35,
+    21.3
+   ],
+   "cuts": "auto",
+   "comments": [
+    {
+     "t": 13.39,
+     "text": {
+      "en": "I close it, and search the list for the SharePoint agents.",
+      "fr": "Je le ferme, et je cherche les agents SharePoint dans la liste."
+     }
+    },
+    {
+     "t": 18.29,
+     "text": {
+      "en": "Only the matching agents remain on screen.",
+      "fr": "Seuls les agents correspondants restent à l'écran."
+     }
+    }
+   ]
+  }
+ ],
+ "_lisez_moi": "Exemple de plan multilingue (testé le 02/10/2026). web = clip filmé par web.mjs ; trim et comments[].t viennent de clips/web_<n>.marks.txt ; 'voice' (facultatif) = texte DIT s'il diffère du sous-titre 'text'. Voir SKILL.md § 5 ter."
+}
