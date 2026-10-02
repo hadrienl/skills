@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Montage vertical 1080x1920 / 60 i/s à la charte du template (VIDEO_TEMPLATE, défaut : template/).
+"""Montage vertical 1080x1920 / 60 i/s à la charte Prisme.ai (template/theme.json).
 
   montage.py --src rec.mp4 --out demo.mp4 \
              --card "Sur-titre|Titre|Sous-titre|Pastille" \
-             --seg "0:23.5|Étape 1 / 2|Discuter avec l'agent|Modèle par défaut" \
+             --seg "0:23.5|Étape 1 / 2|Discuter avec l'agent|Structured Search · Claude 4.6 Sonnet" \
              --seg "33.8:end|Étape 2 / 2|Changer de modèle|Mistral large, puis nouvelle question"
 
 Couverture = diapositive « cover » du template (fond bleu, grand symbole, pastille blanche).
@@ -63,7 +63,7 @@ def cover(eyebrow, title, sub, pill, path):
         f = font("body_bold", 32); tw = d.textlength(pill, font=f); y += 50
         d.rounded_rectangle([80, y, 80 + tw + 90, y + 84], radius=14, fill=rgb(C["cover_pill_bg"]))
         d.text((80 + 45, y + 42), pill, font=f, fill=rgb(C["cover_pill_text"]), anchor="lm")
-    d.text((80, H - 70), TH.get("labels", {}).get("footer_left", ""), font=font("body", 24), fill=rgb(C["cover_eyebrow"]))
+    d.text((80, H - 70), TH.get("labels", {}).get("footer_left", "Prisme.ai Mobile · démo"), font=font("body", 24), fill=rgb(C["cover_eyebrow"]))
     im.convert("RGB").save(path)
 
 def page(eyebrow, title, sub, screen_box, path):
@@ -84,8 +84,8 @@ def page(eyebrow, title, sub, screen_box, path):
     d = ImageDraw.Draw(im)
     d.rounded_rectangle([x0 - 4, y0 - 4, x1 + 4, y1 + 4], radius=RADIUS + 4, fill=rgb(C["border"]))
     d.line([(70, H - 96), (W - 70, H - 96)], fill=rgb(C["border"]), width=2)
-    d.text((70, H - 58), TH.get("labels", {}).get("footer_left", ""), font=font("body", 24), fill=rgb(C["muted"]), anchor="lm")
-    d.text((W - 70, H - 58), TH.get("labels", {}).get("footer_right", ""), font=font("body", 22), fill=rgb(C["muted"]), anchor="rm")
+    d.text((70, H - 58), TH.get("labels", {}).get("footer_left", "Prisme.ai Mobile · démo"), font=font("body", 24), fill=rgb(C["muted"]), anchor="lm")
+    d.text((W - 70, H - 58), TH.get("labels", {}).get("footer_right", "CONFIDENTIEL · Usage interne Prisme.ai"), font=font("body", 22), fill=rgb(C["muted"]), anchor="rm")
     im.convert("RGB").save(path)
 
 ap = argparse.ArgumentParser()

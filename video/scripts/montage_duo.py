@@ -95,7 +95,7 @@ def page(step, idx, all_steps, boxes, notes, path):
         d.text((90 + 2 * r + 16, cy), s["title"], font=font("body_bold" if cur else "body", 24),
                fill=rgb(C["ink"]) if cur else rgb(C["muted"]), anchor="lm")
         y += 48
-    d.text((90, H - 50), plan.get("footer", TH.get("labels", {}).get("footer_right", "")), font=font("body", 20), fill=rgb(C["muted"]), anchor="lm")
+    d.text((90, H - 50), plan.get("footer", TH.get("labels", {}).get("footer_right", "CONFIDENTIEL · Usage interne Prisme.ai")), font=font("body", 20), fill=rgb(C["muted"]), anchor="lm")
     for plat, (x0, y0, x1, y1) in boxes.items():
         sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         ImageDraw.Draw(sh).rounded_rectangle([x0, y0 + 12, x1, y1 + 12], radius=RADIUS + 4, fill=(21, 27, 36, 46))
@@ -107,7 +107,7 @@ def page(step, idx, all_steps, boxes, notes, path):
             ty = (y0 + y1) // 2 - 60
             for line in wrap(d, notes[plat], font("body", 26), x1 - x0 - 60):
                 d.text(((x0 + x1) // 2, ty), line, font=font("body", 26), fill=rgb(C["muted"]), anchor="mm"); ty += 36
-        label = plan.get("device_labels", {}).get(plat) or {"ios": "iOS", "android": "Android"}[plat]
+        label = plan.get("device_labels", {}).get(plat) or {"ios": "iOS · SwiftUI", "android": "Android · Jetpack Compose"}[plat]
         d.text(((x0 + x1) // 2, y1 + 38), label, font=font("body_bold", 22), fill=rgb(C["muted"]), anchor="mm")
     im.convert("RGB").save(path)
 

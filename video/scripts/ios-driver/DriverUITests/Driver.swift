@@ -25,9 +25,8 @@ private func disableQuiescenceWait() {
 final class Driver: XCTestCase {
     func testDrive() throws {
         let env = ProcessInfo.processInfo.environment
-        let dir = env["PV_IO_DIR"] ?? "/tmp/video-driver-io"
-        guard let bundle = env["PV_BUNDLE_ID"] else { XCTFail("TEST_RUNNER_PV_BUNDLE_ID manquant (bundle id de l'app à piloter)"); return }
-        let app = XCUIApplication(bundleIdentifier: bundle)
+        let dir = env["PV_IO_DIR"] ?? "/tmp/prisme-video-io"
+        let app = XCUIApplication(bundleIdentifier: env["PV_BUNDLE_ID"] ?? "ai.prisme.chat.debug")
         continueAfterFailure = true
         if env["PV_KEEP_QUIESCENCE"] == nil { disableQuiescenceWait() }
         app.activate()
